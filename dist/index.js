@@ -1,9 +1,10 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
-import { UserModel, ContentModel } from './db.js';
+import { UserModel, ContentModel, LinkModel } from './db.js';
 import { JWT_PASSWORD } from './config.js';
 import { userMiddleware } from './middleware.js';
+import { random } from './utils.js';
 const app = express();
 app.use(express.json());
 app.post('/api/v1/signup', async (req, res) => {
@@ -71,7 +72,25 @@ app.delete('/api/v1/content', userMiddleware, async (req, res) => {
         userId: req.userId
     });
 });
-app.post('/api/v1/brain/share', (req, res) => {
+app.post('/api/v1/brain/share', async (req, res) => {
+    const share = req.body.share;
+    if (share) {
+        //generate a unique shareable link
+        await LinkModel.create({
+            //@ts-ignore
+            userId: req.userId,
+            hash: random(10)
+        });
+    }
+    else {
+        await LinkModel.deleteOne({
+            //@ts-ignore
+            userId: req.userId
+        });
+    }
+    res.json({
+        message: "Updated share link"
+    });
 });
 app.get('/api/v1/brain/:shareLink', (req, res) => {
 });

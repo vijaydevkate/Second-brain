@@ -7,5 +7,5 @@ export function random(len: number){
     for(let i = 0; i < options.length; i++){
         ans  += options[Math.floor(Math.random() * options.length)]
     }
-    return ans
+    return ans;
 }

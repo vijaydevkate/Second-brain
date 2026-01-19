@@ -14,4 +14,9 @@ const contentSchema = new Schema({
     userId: [{ type: mongoose.Types.ObjectId, ref: 'Users', required: true }]
 });
 export const ContentModel = model("Contents", contentSchema);
+const LinkSchema = new Schema({
+    hash: String,
+    userId: [{ type: mongoose.Types.ObjectId, ref: 'Users', required: true, unique: true }]
+});
+export const LinkModel = model("Links", LinkSchema);
 //# sourceMappingURL=db.js.map
