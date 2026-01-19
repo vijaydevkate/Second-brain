@@ -22,10 +22,10 @@ const contentSchema = new Schema({
 
 export const ContentModel = model("Contents", contentSchema)
 
-const linkSchema = new Schema({
+const LinkSchema = new Schema({
     hash: String,
-    userId: [{type:mongoose.Types.ObjectId, ref:'Users', required:true}]
+    userId: [{type:mongoose.Types.ObjectId, ref:'Users', required:true, unique:true}]
  
 })
 
-export const linkModel =  model("Links", linkSchema)
+export const LinkModel =  model("Links", LinkSchema)
