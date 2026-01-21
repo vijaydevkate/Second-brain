@@ -16,7 +16,7 @@ app.post('/api/v1/signup', async (req, res) => {
             password: password
         });
         res.json({
-            message: "User signed in successfully"
+            message: "User signed up successfully"
         });
     }
     catch (e) {
@@ -43,11 +43,13 @@ app.post('/api/v1/signin', async (req, res) => {
         (res.json({ message: "Incorrect username or password" }));
 });
 app.post('/api/v1/content', userMiddleware, async (req, res) => {
-    const title = req.body.title;
-    const links = req.body.links;
+    const type = req.body.type;
+    const link = req.body.link;
     await ContentModel.create({
-        title,
-        links,
+        type,
+        link,
+        //@ts-ignore
+        title: req.body.title,
         //@ts-ignore
         userId: req.userId,
         tags: []
@@ -92,7 +94,34 @@ app.post('/api/v1/brain/share', async (req, res) => {
         message: "Updated share link"
     });
 });
-app.get('/api/v1/brain/:shareLink', (req, res) => {
+app.get('/api/v1/brain/:shareLink', async (req, res) => {
+    const hash = req.params.shareLink;
+    const link = await LinkModel.findOne({
+        hash: hash
+    });
+    //if hash is incorrect
+    if (!link) {
+        res.status(404).json({
+            message: "sorry, link not found"
+        });
+        return;
+    }
+    const content = await ContentModel.findOne({
+        userId: link.userId
+    });
+    const user = await UserModel.findOne({
+        userId: link.userId
+    });
+    if (!user) {
+        res.status(404).json({
+            message: "user not found"
+        });
+        return;
+    }
+    res.json({
+        username: user.username,
+        content: content
+    });
 });
 app.listen(3000);
 //# sourceMappingURL=index.js.map

@@ -6,17 +6,18 @@ const UserSchema = new Schema({
     username: { type: String, unique: true },
     password: String
 });
-export const UserModel = model("Users", UserSchema);
+export const UserModel = model("User", UserSchema);
 const contentSchema = new Schema({
     title: String,
-    links: String,
-    tag: [{ type: mongoose.Types.ObjectId, ref: 'Tags' }],
-    userId: [{ type: mongoose.Types.ObjectId, ref: 'Users', required: true }]
+    type: String,
+    link: String,
+    tags: [{ type: mongoose.Types.ObjectId, ref: 'Tag' }],
+    userId: [{ type: mongoose.Types.ObjectId, ref: 'User', required: true }]
 });
-export const ContentModel = model("Contents", contentSchema);
+export const ContentModel = model("Content", contentSchema);
 const LinkSchema = new Schema({
     hash: String,
-    userId: [{ type: mongoose.Types.ObjectId, ref: 'Users', required: true, unique: true }]
+    userId: [{ type: mongoose.Types.ObjectId, ref: 'User', required: true, unique: true }]
 });
-export const LinkModel = model("Links", LinkSchema);
+export const LinkModel = model("Link", LinkSchema);
 //# sourceMappingURL=db.js.map

@@ -27,7 +27,7 @@ export declare const UserModel: mongoose.Model<{
     __v: number;
 }>>;
 export declare const ContentModel: mongoose.Model<{
-    tag: mongoose.Types.DocumentArray<{
+    tags: mongoose.Types.DocumentArray<{
         prototype?: unknown;
         cacheHexString?: unknown;
         generate?: any;
@@ -77,10 +77,11 @@ export declare const ContentModel: mongoose.Model<{
         createFromBase64?: any;
         isValid?: any;
     }>;
+    type?: unknown;
+    link?: unknown;
     title?: unknown;
-    links?: unknown;
 }, {}, {}, {}, mongoose.Document<unknown, {}, {
-    tag: mongoose.Types.DocumentArray<{
+    tags: mongoose.Types.DocumentArray<{
         prototype?: unknown;
         cacheHexString?: unknown;
         generate?: any;
@@ -130,10 +131,11 @@ export declare const ContentModel: mongoose.Model<{
         createFromBase64?: any;
         isValid?: any;
     }>;
+    type?: unknown;
+    link?: unknown;
     title?: unknown;
-    links?: unknown;
 }, {}, mongoose.DefaultSchemaOptions> & {
-    tag: mongoose.Types.DocumentArray<{
+    tags: mongoose.Types.DocumentArray<{
         prototype?: unknown;
         cacheHexString?: unknown;
         generate?: any;
@@ -183,14 +185,15 @@ export declare const ContentModel: mongoose.Model<{
         createFromBase64?: any;
         isValid?: any;
     }>;
+    type?: unknown;
+    link?: unknown;
     title?: unknown;
-    links?: unknown;
 } & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
 }, mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, {
-    tag: {
+    tags: {
         prototype?: mongoose.Types.ObjectId | null;
         cacheHexString?: unknown;
         generate?: {} | null;
@@ -208,10 +211,11 @@ export declare const ContentModel: mongoose.Model<{
         createFromBase64?: {} | null;
         isValid?: {} | null;
     }[];
+    type?: string | null;
+    link?: string | null;
     title?: string | null;
-    links?: string | null;
 }, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
-    tag: {
+    tags: {
         prototype?: mongoose.Types.ObjectId | null;
         cacheHexString?: unknown;
         generate?: {} | null;
@@ -229,10 +233,11 @@ export declare const ContentModel: mongoose.Model<{
         createFromBase64?: {} | null;
         isValid?: {} | null;
     }[];
+    type?: string | null;
+    link?: string | null;
     title?: string | null;
-    links?: string | null;
 }>, {}, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & mongoose.FlatRecord<{
-    tag: {
+    tags: {
         prototype?: mongoose.Types.ObjectId | null;
         cacheHexString?: unknown;
         generate?: {} | null;
@@ -250,8 +255,9 @@ export declare const ContentModel: mongoose.Model<{
         createFromBase64?: {} | null;
         isValid?: {} | null;
     }[];
+    type?: string | null;
+    link?: string | null;
     title?: string | null;
-    links?: string | null;
 }> & {
     _id: mongoose.Types.ObjectId;
 } & {
