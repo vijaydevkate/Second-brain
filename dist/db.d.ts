@@ -52,34 +52,18 @@ export declare const ContentModel: mongoose.Model<{
         createFromBase64?: any;
         isValid?: any;
     }>;
-    userId: mongoose.Types.DocumentArray<{
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }, mongoose.Types.Subdocument<mongoose.mongo.BSON.ObjectId, any, {
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }> & {
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }>;
     type?: unknown;
     link?: unknown;
     title?: unknown;
+    userId?: {
+        prototype?: unknown;
+        cacheHexString?: unknown;
+        generate?: any;
+        createFromTime?: any;
+        createFromHexString?: any;
+        createFromBase64?: any;
+        isValid?: any;
+    } | null;
 }, {}, {}, {}, mongoose.Document<unknown, {}, {
     tags: mongoose.Types.DocumentArray<{
         prototype?: unknown;
@@ -106,34 +90,18 @@ export declare const ContentModel: mongoose.Model<{
         createFromBase64?: any;
         isValid?: any;
     }>;
-    userId: mongoose.Types.DocumentArray<{
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }, mongoose.Types.Subdocument<mongoose.mongo.BSON.ObjectId, any, {
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }> & {
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }>;
     type?: unknown;
     link?: unknown;
     title?: unknown;
+    userId?: {
+        prototype?: unknown;
+        cacheHexString?: unknown;
+        generate?: any;
+        createFromTime?: any;
+        createFromHexString?: any;
+        createFromBase64?: any;
+        isValid?: any;
+    } | null;
 }, {}, mongoose.DefaultSchemaOptions> & {
     tags: mongoose.Types.DocumentArray<{
         prototype?: unknown;
@@ -160,34 +128,18 @@ export declare const ContentModel: mongoose.Model<{
         createFromBase64?: any;
         isValid?: any;
     }>;
-    userId: mongoose.Types.DocumentArray<{
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }, mongoose.Types.Subdocument<mongoose.mongo.BSON.ObjectId, any, {
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }> & {
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }>;
     type?: unknown;
     link?: unknown;
     title?: unknown;
+    userId?: {
+        prototype?: unknown;
+        cacheHexString?: unknown;
+        generate?: any;
+        createFromTime?: any;
+        createFromHexString?: any;
+        createFromBase64?: any;
+        isValid?: any;
+    } | null;
 } & {
     _id: mongoose.Types.ObjectId;
 } & {
@@ -210,7 +162,7 @@ export declare const ContentModel: mongoose.Model<{
         createFromHexString?: {} | null;
         createFromBase64?: {} | null;
         isValid?: {} | null;
-    }[];
+    };
     type?: string | null;
     link?: string | null;
     title?: string | null;
@@ -232,7 +184,7 @@ export declare const ContentModel: mongoose.Model<{
         createFromHexString?: {} | null;
         createFromBase64?: {} | null;
         isValid?: {} | null;
-    }[];
+    };
     type?: string | null;
     link?: string | null;
     title?: string | null;
@@ -254,7 +206,7 @@ export declare const ContentModel: mongoose.Model<{
         createFromHexString?: {} | null;
         createFromBase64?: {} | null;
         isValid?: {} | null;
-    }[];
+    };
     type?: string | null;
     link?: string | null;
     title?: string | null;
@@ -264,86 +216,38 @@ export declare const ContentModel: mongoose.Model<{
     __v: number;
 }>>;
 export declare const LinkModel: mongoose.Model<{
-    userId: mongoose.Types.DocumentArray<{
-        prototype?: unknown;
+    userId: {
+        prototype?: mongoose.Types.ObjectId | null;
         cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }, mongoose.Types.Subdocument<mongoose.mongo.BSON.ObjectId, any, {
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }> & {
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }>;
-    hash?: unknown;
+        generate?: {} | null;
+        createFromTime?: {} | null;
+        createFromHexString?: {} | null;
+        createFromBase64?: {} | null;
+        isValid?: {} | null;
+    };
+    hash?: string | null;
 }, {}, {}, {}, mongoose.Document<unknown, {}, {
-    userId: mongoose.Types.DocumentArray<{
-        prototype?: unknown;
+    userId: {
+        prototype?: mongoose.Types.ObjectId | null;
         cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }, mongoose.Types.Subdocument<mongoose.mongo.BSON.ObjectId, any, {
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }> & {
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }>;
-    hash?: unknown;
+        generate?: {} | null;
+        createFromTime?: {} | null;
+        createFromHexString?: {} | null;
+        createFromBase64?: {} | null;
+        isValid?: {} | null;
+    };
+    hash?: string | null;
 }, {}, mongoose.DefaultSchemaOptions> & {
-    userId: mongoose.Types.DocumentArray<{
-        prototype?: unknown;
+    userId: {
+        prototype?: mongoose.Types.ObjectId | null;
         cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }, mongoose.Types.Subdocument<mongoose.mongo.BSON.ObjectId, any, {
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }> & {
-        prototype?: unknown;
-        cacheHexString?: unknown;
-        generate?: any;
-        createFromTime?: any;
-        createFromHexString?: any;
-        createFromBase64?: any;
-        isValid?: any;
-    }>;
-    hash?: unknown;
+        generate?: {} | null;
+        createFromTime?: {} | null;
+        createFromHexString?: {} | null;
+        createFromBase64?: {} | null;
+        isValid?: {} | null;
+    };
+    hash?: string | null;
 } & {
     _id: mongoose.Types.ObjectId;
 } & {
@@ -357,7 +261,7 @@ export declare const LinkModel: mongoose.Model<{
         createFromHexString?: {} | null;
         createFromBase64?: {} | null;
         isValid?: {} | null;
-    }[];
+    };
     hash?: string | null;
 }, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
     userId: {
@@ -368,7 +272,7 @@ export declare const LinkModel: mongoose.Model<{
         createFromHexString?: {} | null;
         createFromBase64?: {} | null;
         isValid?: {} | null;
-    }[];
+    };
     hash?: string | null;
 }>, {}, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & mongoose.FlatRecord<{
     userId: {
@@ -379,7 +283,7 @@ export declare const LinkModel: mongoose.Model<{
         createFromHexString?: {} | null;
         createFromBase64?: {} | null;
         isValid?: {} | null;
-    }[];
+    };
     hash?: string | null;
 }> & {
     _id: mongoose.Types.ObjectId;
